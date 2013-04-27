@@ -33,6 +33,33 @@
     width: 100%;
     height: 1cm;
 }
+#__cordovaappharness_console_div
+{
+    position: fixed;
+    left : 0px;
+    bottom : 0px;
+    z-index: 2000;
+    width: 100%;
+    height: 50%;
+    display: none;
+    border-style:solid;
+    border-width:1px;
+    background-color:rgba(128, 128, 128, 1);
+}
+#__cordovaappharness_console_div textarea
+{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+#__cordovaappharness_consoleClose_button
+{
+    float: right;
+}
+#__cordovaappharness_consoleLogs_text
+{
+    display:none;
+}
 </style>
 <div id="__cordovaappharness_contextMenu_div">
     <p>Tap Anywhere to Close</p>
@@ -44,7 +71,19 @@
             <a href="cdv-app-harness:///redirect/index.html#/?lastLaunched=true"><button>Restart</button></a>
         </li>
         <li>
+            <button id="__cordovaappharness_showConsole_button">Console</button>
+        </li>
+        <li>
             <a href="cdv-app-harness:///redirect/index.html"><button>Back to Main Menu</button></a>
         </li>
     </ul>
+</div>
+<div id="__cordovaappharness_console_div">
+    <label for="__cordovaappharness_consoleDOM_button">DOM(Does not auto update)</label>
+    <input type="radio" id="__cordovaappharness_consoleDOM_button" name="__cordovaappharness_consoleTab_button" value="DOM" checked="checked" />
+    <label for="__cordovaappharness_consoleLogs_button">Logs</label>
+    <input type="radio" id="__cordovaappharness_consoleLogs_button" name="__cordovaappharness_consoleTab_button" value="Logs" />
+    <button id="__cordovaappharness_consoleClose_button">Close</button>
+    <textarea id="__cordovaappharness_consoleDOM_text"></textarea>
+    <textarea id="__cordovaappharness_consoleLogs_text"></textarea>
 </div>
